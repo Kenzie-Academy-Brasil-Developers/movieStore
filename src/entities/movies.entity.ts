@@ -1,3 +1,18 @@
-class Movie {}
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+@Entity('movies')
+export default class Movie {
+    @PrimaryGeneratedColumn('increment')
+    id: number
 
-export default Movie;
+    @Column({ length: 50 })
+    name: string
+
+    @Column({type: 'text', nullable: true})
+    description?: string  | null | undefined
+
+    @Column({ type: 'integer'})
+    duration: number 
+
+    @Column({ type: 'integer'})
+    price: number
+}
