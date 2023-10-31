@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test SECRET_KEY=chavesecreta jest --forceExit --runInBand",
     "dev": "tsnd --cls --rs --ignore-watch node_modules src/server.ts",
     "typeorm": "typeorm-ts-node-commonjs"
   },

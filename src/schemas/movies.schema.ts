@@ -4,10 +4,10 @@ const movieSchema = z.object({
   id: z.number().positive(),
   name: z.string().max(50),
   description: z.string().nullish(),
-  duration: z.number(),
-  price: z.number(),
+  duration: z.number().int().positive(),
+  price: z.number().positive().int(),
  
 })
 
 export const movieCreateSchema = movieSchema.omit({id: true})
-export const movieUpdateSchema = movieSchema.partial()
+export const movieUpdateSchema = movieCreateSchema.partial()
