@@ -1,4 +1,4 @@
-import { MovieRead } from "./movies.interface"
+import { MovieRead } from "./movies.interface";
 
 
 export type Pagination = {

@@ -1,6 +1,6 @@
-import 'dotenv/config'
+import "dotenv/config";
 import { NextFunction, Request, Response } from "express";
-import { PaginationParams } from '../interfaces/pagination.interface';
+import { PaginationParams } from "../interfaces/pagination.interface";
 
 
 export const pagination = (req: Request, res: Response, next: NextFunction): void => {
@@ -29,20 +29,20 @@ export const pagination = (req: Request, res: Response, next: NextFunction): voi
   const queryOrder: any = req.query.order
   const querySort: any = req.query.sort
 
-  const orderOpts: Array<string> = ['asc', 'desc']
-  const sortOpts: Array<string> = ['price', 'duration']
+  const orderOpts: Array<string> = ["asc", "desc"]
+  const sortOpts: Array<string> = ["price", "duration"]
 
   let order: string
   let sort: string
 
   if(!(querySort && sortOpts.includes(querySort))) {
-    sort = 'id'
+    sort = "id"
   } else {
     sort = querySort
   }
 
   if(!querySort || !(queryOrder && orderOpts.includes(queryOrder))) {
-    order = 'asc'
+    order = "asc"
   } else {
     order = queryOrder
   }

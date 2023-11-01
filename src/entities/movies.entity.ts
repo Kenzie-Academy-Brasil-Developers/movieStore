@@ -1,18 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
-@Entity('movies')
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+@Entity("movies")
 export default class Movie {
-    @PrimaryGeneratedColumn('increment')
+    @PrimaryGeneratedColumn("increment")
     id: number
 
     @Column({ length: 50 })
     name: string
 
-    @Column({type: 'text', nullable: true})
+    @Column({type: "text", nullable: true})
     description?: string  | null | undefined
 
-    @Column({ type: 'integer'})
+    @Column({ type: "integer"})
     duration: number 
 
-    @Column({ type: 'integer'})
+    @Column({ type: "integer"})
     price: number
 }
