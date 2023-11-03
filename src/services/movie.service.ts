@@ -5,10 +5,8 @@ import { movieRepo } from "../repositories";
 
 export const createMovieService = async (data: MovieCreate): Promise<Movie> => {
     const newMovie: Movie = await movieRepo.save(data)
-  
     return newMovie
 }
-
 
 export const readMovieService = async ({ nextPage, order, page, perPage, prevPage, sort }: PaginationParams): Promise<Pagination> => {
     const [movies, count] = await movieRepo.findAndCount({

@@ -3,4 +3,4 @@ import { movieRoute } from "./movie.routes";
 
 export const routes: Router = Router();
 
-routes.use('/movies', movieRoute);
+routes.use("/movies", movieRoute);

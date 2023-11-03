@@ -5,7 +5,7 @@ import { Movie } from "../entities";
 
 export const verifyNameExists = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const {name} = req.body
-
+    
     if(!name) return next()
     const movie: Movie | null = await movieRepo.findOneBy({name})
     if(movie) throw new AppError("Movie already exists.", 409)

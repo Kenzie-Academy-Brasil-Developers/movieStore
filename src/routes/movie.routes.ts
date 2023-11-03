@@ -9,7 +9,7 @@ import { verifyNameExists } from "../middlewares/verificationName.middleware";
 
 export const movieRoute: Router = Router();
 
-movieRoute.post('/', validateBody(movieCreateSchema),verifyNameExists, createMovieController);
-movieRoute.get('/',pagination, readMovieController);
-movieRoute.patch('/:movieId',validateBody(movieUpdateSchema), verifyIdExists,verifyNameExists, updateMovieController);
-movieRoute.delete('/:movieId',verifyIdExists, deleteMovieController);
+movieRoute.post("/", validateBody(movieCreateSchema),verifyNameExists, createMovieController);
+movieRoute.get("/",pagination, readMovieController);
+movieRoute.patch("/:movieId",validateBody(movieUpdateSchema), verifyIdExists,verifyNameExists, updateMovieController);
+movieRoute.delete("/:movieId",verifyIdExists, deleteMovieController);
