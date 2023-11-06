@@ -8,6 +8,7 @@ export const createMovieService = async (data: MovieCreate): Promise<Movie> => {
     return newMovie
 }
 
+
 export const readMovieService = async ({ nextPage, order, page, perPage, prevPage, sort }: PaginationParams): Promise<Pagination> => {
     const [movies, count] = await movieRepo.findAndCount({
       order: { [sort]: order },
@@ -23,10 +24,12 @@ export const readMovieService = async ({ nextPage, order, page, perPage, prevPag
     }
 }
 
+
 export const updateMovieService = async (movie: Movie, data: MovieUpdate): Promise<Movie> => {
     return await movieRepo.save({...movie, ...data})
 }
-  
+
+
 export const deleteMovieService = async (movie: Movie): Promise<void> => {
     await movieRepo.remove(movie)
 }

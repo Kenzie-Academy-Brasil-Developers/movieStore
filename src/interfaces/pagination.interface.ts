@@ -8,6 +8,7 @@ export type Pagination = {
   data: MovieRead
 }
 
+
 export type PaginationParams = {
   page: number,
   perPage: number,
